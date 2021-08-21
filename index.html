@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <script src="terrian.js"></script>
+    <style>
+      #canvas {
+        position: relative;
+        width: 640px;
+        height: 2560px;
+      }
+      * {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="canvas" />
+    <script>
+      document.getElementById("canvas").innerHTML = todesplay;
+    </script>
+  </body>
+</html>
