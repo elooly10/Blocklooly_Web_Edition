@@ -1,2 +1,3 @@
 # Blocklooly_Web_Edition
-Created with CodeSandbox
+
+## Do Not Copy For Commercial Purposes
