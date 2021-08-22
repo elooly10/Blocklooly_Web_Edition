@@ -1,6 +1,6 @@
 # Blocklooly Update Data
 
-##### η.0.2.0
+##### η.0.2.1
 
 ## Phase
 
@@ -16,4 +16,9 @@
 
 ## Patch
 
-###### 0
+###### 1
+
+## Notes
+
+- Changed Terrain Display To Load In A Function.
+- Changed Stone Texture To Help With Speed
