@@ -11,29 +11,29 @@ for (x = 0; x < Wide; x++) {
       log(air.image, "air", "air.tap(this)");
     } else if (array[y - 1] === "cave_air" && Math.random() <= 0.75) {
       array.push("cave_air.middle");
-      log(cave_air.image, "cave_air.middle");
+      log(cave_air.image, "cave_air.middle", "air.tap(this)");
     } else if (array[y - 1] === "cave_air.middle" && Math.random() <= 0.5) {
       array.push("cave_air.top");
-      log(cave_air.image, "cave_air.top");
+      log(cave_air.image, "cave_air.top", "air.tap(this)");
     } else if (array[y - 1] === "cave_air.middle" && Math.random() <= 0.1) {
       array.push("cave_air.middle");
       log(cave_air.image, "cave_air.middle");
     } else if (chance < air.ypre[Math.floor(y / 8)]) {
       array.push("air");
-      log(air.image, "air", "air.tap(this)");
+      log(air.image, "air", "air.tap(this)", "air.tap(this)");
     } else if (
       chance <=
       dirt.ypre[Math.floor(y / 8)] + air.ypre[Math.floor(y / 8)]
     ) {
       array.push("dirt");
-      log(dirt.image, "dirt");
+      log(dirt.image, "dirt", "dirt.tap(this)");
     } else if (
       chance <=
       stone.ypre[Math.floor(y / 8)] +
         dirt.ypre[Math.floor(y / 8)] +
         air.ypre[Math.floor(y / 8)]
     ) {
-      log(stone.image, "stone");
+      log(stone.image, "stone", "stone.tap(this)");
 
       array.push("stone");
     } else if (
@@ -43,7 +43,7 @@ for (x = 0; x < Wide; x++) {
         air.ypre[Math.floor(y / 8)] +
         cave_air.ypre[Math.floor(y / 8)]
     ) {
-      log(cave_air.image, "cave_air");
+      log(cave_air.image, "cave_air", "air.tap(this)");
       array.push("cave_air");
     } else {
       array.push("error");
