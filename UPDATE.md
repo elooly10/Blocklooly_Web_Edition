@@ -1,6 +1,6 @@
 # Blocklooly Update Data
 
-##### η.0.2.1
+##### η.0.2.2
 
 ## Phase
 
@@ -16,9 +16,8 @@
 
 ## Patch
 
-###### 1
+###### 2
 
 ## Notes
 
-- Changed Terrain Display To Load In A Function.
-- Changed Stone Texture To Help With Speed
+- Added More Air Kinds To Improve Caves (cave_air.middle, cave_air.top)

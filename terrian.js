@@ -6,7 +6,19 @@ var todesplay = "";
 for (x = 0; x < Wide; x++) {
   for (y = 0; y < Tall; y++) {
     var chance = Math.round(Math.random() * 100);
-    if (array[y - 1] === "air" || chance < air.ypre[Math.floor(y / 8)]) {
+    if (array[y - 1] === "air") {
+      array.push("air");
+      log(air.image, "air");
+    } else if (array[y - 1] === "cave_air" && Math.random() <= 0.75) {
+      array.push("cave_air.middle");
+      log(cave_air.image, "cave_air.middle");
+    } else if (array[y - 1] === "cave_air.middle" && Math.random() <= 0.5) {
+      array.push("cave_air.top");
+      log(cave_air.image, "cave_air.top");
+    } else if (array[y - 1] === "cave_air.middle" && Math.random() <= 0.1) {
+      array.push("cave_air.middle");
+      log(cave_air.image, "cave_air.middle");
+    } else if (chance < air.ypre[Math.floor(y / 8)]) {
       array.push("air");
       log(air.image, "air");
     } else if (
