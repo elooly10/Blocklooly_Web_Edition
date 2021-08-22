@@ -1,8 +1,18 @@
 var Tall = 128;
 var Wide = 32;
+var cobbled_stone = {
+  tap: function (l) {
+    l.src = air.image;
+    l.setAttribute("onClick", "javascript: air.tap(this);");
+  },
+  image: ["/media/cobbled_stone.svg"]
+};
 var air = {
   ypre: [0, 0, 0, 0, 0, 0, 1, 3, 3, 19, 29, 50, 60, 80, 90, 100],
-
+  tap: function (l) {
+    l.src = cobbled_stone.image;
+    l.setAttribute("onClick", "javascript: cobbled_stone.tap(this);");
+  },
   image: ["/media/air.svg"]
 };
 var cave_air = {
@@ -18,9 +28,11 @@ var stone = {
   ypre: [100, 90, 90, 90, 90, 85, 81, 67, 21, 20, 30, 20, 19, 10, 5, 0],
   image: ["/media/stone.svg"]
 };
-function log(image_src, data_type) {
+function log(image_src, data_type, onclick) {
   todesplay +=
-    "<image data-y='" +
+    "<image onclick='" +
+    onclick +
+    "'data-y='" +
     y +
     "' data-x='" +
     x +

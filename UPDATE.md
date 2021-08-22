@@ -1,6 +1,6 @@
 # Blocklooly Update Data
 
-##### η.0.2.2
+##### η.0.2.3
 
 ## Phase
 
@@ -16,8 +16,10 @@
 
 ## Patch
 
-###### 2
+###### 3
 
 ## Notes
 
-- Added More Air Kinds To Improve Caves (cave_air.middle, cave_air.top)
+- Added More Cobbled Stone
+  -- Does Not Generate. instead, replaces air on click.
+- note: cave air does not operate currently

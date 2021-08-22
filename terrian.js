@@ -8,7 +8,7 @@ for (x = 0; x < Wide; x++) {
     var chance = Math.round(Math.random() * 100);
     if (array[y - 1] === "air") {
       array.push("air");
-      log(air.image, "air");
+      log(air.image, "air", "air.tap(this)");
     } else if (array[y - 1] === "cave_air" && Math.random() <= 0.75) {
       array.push("cave_air.middle");
       log(cave_air.image, "cave_air.middle");
@@ -20,7 +20,7 @@ for (x = 0; x < Wide; x++) {
       log(cave_air.image, "cave_air.middle");
     } else if (chance < air.ypre[Math.floor(y / 8)]) {
       array.push("air");
-      log(air.image, "air");
+      log(air.image, "air", "air.tap(this)");
     } else if (
       chance <=
       dirt.ypre[Math.floor(y / 8)] + air.ypre[Math.floor(y / 8)]
