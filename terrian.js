@@ -7,9 +7,10 @@ var todesplay = "";
 for (x = 0; x < Wide; x++) {
   for (y = 0; y < Tall; y++) {
     var chance = Math.round(Math.random() * 100);
+    // These Are Overloads
     if (col[y - 1] === "air") {
       col.push("air");
-      log(air.image, "air", "air.tap(this)");
+      log(air.image, "long_air", "air.tap(this)");
     } else if (col[y - 1] === "cave_air" && Math.random() <= 0.75) {
       col.push("cave_air.middle");
       log(cave_air.image, "cave_air.middle", "air.tap(this)");
@@ -19,9 +20,31 @@ for (x = 0; x < Wide; x++) {
     } else if (col[y - 1] === "cave_air.middle" && Math.random() <= 0.1) {
       col.push("cave_air.middle");
       log(cave_air.image, "cave_air.middle");
-    } else if (chance < air.ypre[Math.floor(y / 8)]) {
-      col.push("air");
-      log(air.image, "air", "air.tap(this)", "air.tap(this)");
+    }
+
+    // These Are Configured Through Chance
+    else if (chance < air.ypre[Math.floor(y / 8)]) {
+      var loop = search[x - 1];
+      if (x > 0) {
+        var distance = Math.random() * 100;
+        if (distance > 50 && loop[y - 1] === "air") {
+          col.push("air");
+          log(air.image, "air", "air.tap(this)");
+        } else if (distance > 66.67 && loop[y - 2] === "air") {
+          col.push("air");
+          log(air.image, "air", "air.tap(this)");
+        } else if (distance > 75) {
+          col.push("air");
+          log(air.image, "air", "air.tap(this)");
+        } else {
+          col.push("dirt");
+          log(oak_leaf.image, "oak_leaf.air_generated", "oak_leaf.tap(this)");
+        }
+      } else {
+        col.push("air");
+        log(air.image, "air", "air.tap(this)");
+      }
+      // }
     } else if (
       chance <=
       dirt.ypre[Math.floor(y / 8)] + air.ypre[Math.floor(y / 8)]
@@ -53,7 +76,7 @@ for (x = 0; x < Wide; x++) {
   }
   //displayarray[displayarray.length] += [col];
 
-  console.log(col);
+  // console.log(col);
   search[x] = col;
   col = [];
 }
