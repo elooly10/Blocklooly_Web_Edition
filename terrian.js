@@ -27,16 +27,22 @@ for (x = 0; x < Wide; x++) {
       var loop = search[x - 1];
       if (x > 0) {
         var distance = Math.random() * 100;
-        if (distance > 50 && (loop[y + 1] || loop[y - 1]) === "air") {
+        if (distance > 50 && (loop[y + 1] === "air" || loop[y - 1] === "air")) {
           col.push("air");
           log(air.image, "air.load_benifit.1", "air.tap(this)");
+        } else if (distance > 50 && loop[y] === "air") {
+          col.push("air");
+          log(air.image, "air.load_benifit.0", "air.tap(this)");
         } else if (
           distance > 200 / 3 &&
-          (loop[y + 2] || loop[y - 2]) === "air"
+          (loop[y + 2] === "air" || loop[y - 2] === "air")
         ) {
           col.push("air");
           log(air.image, "air.load_benifit.2", "air.tap(this)");
-        } else if (distance > 75 && (loop[y + 3] || loop[y - 3]) === "air") {
+        } else if (
+          distance > 75 &&
+          (loop[y + 3] === "air" || loop[y - 3] === "air")
+        ) {
           col.push("air");
           log(air.image, "air.load_benifit.3", "air.tap(this)");
         } else if (distance > 500 / 6) {
@@ -44,7 +50,7 @@ for (x = 0; x < Wide; x++) {
           log(air.image, "air", "air.tap(this)");
         } else {
           col.push("dirt");
-          log(oak_leaf.image, "oak_leaf.air_generated", "oak_leaf.tap(this)");
+          log(dirt.image, "dirt.air_generated", "dirt.tap(this)");
         }
       } else {
         col.push("air");

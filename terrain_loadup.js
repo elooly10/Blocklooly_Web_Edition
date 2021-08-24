@@ -14,6 +14,13 @@ var oak_leaf = {
   },
   image: ["/media/oak_leaves.svg"]
 };
+var sand = {
+  tap: function (l) {
+    l.src = air.image;
+    l.setAttribute("onClick", "javascript: air.tap(this);");
+  },
+  image: ["/media/sand.svg"]
+};
 var air = {
   ypre: [0, 0, 0, 0, 0, 0, 1, 3, 3, 19, 39, 80, 85, 90, 90, 100],
   tap: function (l) {
